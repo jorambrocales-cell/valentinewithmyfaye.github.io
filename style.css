@@ -1,77 +1,22 @@
-body {
-    margin: 0;
-    padding: 0;
+/* Add to your existing style.css */
+#noButton {
+    transition: all 0.2s ease;
+    background-color: #fce4ec !important;
+    color: #5a3e3e !important;
+}
+
+input[type="text"], input[type="password"] {
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ffb7c5;
+    margin: 10px 0;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.button-container {
+    margin-top: 30px;
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #fff5f5; /* Soft blush white */
-    font-family: 'Montserrat', sans-serif;
-    color: #5a3e3e;
-    overflow: hidden;
-}
-
-.container {
-    text-align: center;
-    width: 80%;
-    max-width: 400px;
-}
-
-section {
-    display: none; /* Hide all pages by default */
-    animation: fadeIn 1s ease-in-out;
-}
-
-section.active {
-    display: block; /* Show active page */
-}
-
-h1, h2 {
-    font-family: 'Dancing Script', cursive;
-    font-size: 2.5rem;
-    color: #d63384;
-}
-
-button {
-    background-color: #ffb7c5;
-    border: none;
-    padding: 12px 24px;
-    border-radius: 25px;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-    transition: transform 0.3s ease, background-color 0.3s;
-    margin-top: 20px;
-}
-
-button:hover {
-    transform: scale(1.1);
-    background-color: #ff8fa3;
-}
-
-.button-group {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.highlight {
-    font-style: italic;
-    color: #a94442;
-}
-
-/* Animations */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-.bounce {
-    animation: bounce 2s infinite;
-}
-
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
-    40% {transform: translateY(-10px);}
-    60% {transform: translateY(-5px);}
+    gap: 20px;
 }
