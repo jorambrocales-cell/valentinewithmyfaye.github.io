@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello, My Valentine!</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <audio id="bgMusic" loop>
+        <source src="passenger-seat.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="container">
+        <section id="page1" class="active">
+            <h1 class="fade-in">Hello, my Valentine!</h1>
+            <button onclick="nextPage(2); playMusic()">Open Letter ❤️</button>
+        </section>
+
+        <section id="page2">
+            <div class="heart-icon">❤️</div>
+            <h2 class="typewriter">I love you so much, my Faye.</h2>
+            <button onclick="nextPage(3)">Keep reading...</button>
+        </section>
+
+        <section id="page3">
+            <h3>Are you available this Saturday?</h3>
+            <div class="button-group">
+                <button onclick="nextPage(4)">Yes, baby</button>
+                <button onclick="nextPage(4)">Yes, my love</button>
+            </div>
+        </section>
+
+        <section id="page4">
+            <p>Our date on the 14th will be based on our vacant time. I’ll wait for you whenever you're ready!</p>
+            <button onclick="nextPage(5)">What should I wear?</button>
+        </section>
+
+        <section id="page5">
+            <h3>The Dress Code</h3>
+            <p>Wear your best outfit! But remember...</p>
+            <p class="highlight">What's important is that you love me (and I love you)!</p>
+            <button onclick="nextPage(6)">Where are we going?</button>
+        </section>
+
+        <section id="page6">
+            <h3>Our Spot</h3>
+            <p><strong>Mary's Coffee</strong></p>
+            <p>Barlin Street corner Sta Cruz Street,<br>Naga City, Philippines, 4400</p>
+            <button onclick="nextPage(7)">Final message</button>
+        </section>
+
+        <section id="page7">
+            <h2 class="bounce">See you, my loveeee!</h2>
+            <p>Really excited to see you, my babyy!</p>
+            <div class="floating-hearts">💖✨🌹</div>
+        </section>
+    </div>
+
+    <script>
+        function nextPage(pageNumber) {
+            // Hide all sections
+            document.querySelectorAll('section').forEach(section => {
+                section.classList.remove('active');
+            });
+            // Show the target section
+            document.getElementById('page' + pageNumber).classList.add('active');
+        }
+
+        function playMusic() {
+            let audio = document.getElementById('bgMusic');
+            audio.play().catch(e => console.log("Audio needs user interaction first"));
+        }
+    </script>
+</body>
+</html>
