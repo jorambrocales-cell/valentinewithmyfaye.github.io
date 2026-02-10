@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello, My Valentine!</title>
+    <title>For my Faye ❤️</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
 </head>
@@ -16,7 +16,10 @@
     <div class="container">
         <section id="page1" class="active">
             <h1 class="fade-in">Hello, my Valentine!</h1>
-            <button onclick="nextPage(2); playMusic()">Open Letter ❤️</button>
+            <p>Enter the secret password to enter:</p>
+            <input type="password" id="passInput" placeholder="Kahit ano love...">
+            <br>
+            <button onclick="checkPassword()">Unlock ❤️</button>
         </section>
 
         <section id="page2">
@@ -26,53 +29,49 @@
         </section>
 
         <section id="page3">
-            <h3>Are you available this Saturday?</h3>
-            <div class="button-group">
-                <button onclick="nextPage(4)">Yes, baby</button>
-                <button onclick="nextPage(4)">Yes, my love</button>
+            <h3>Available po ikaw valentine ko this saturday? hehe</h3>
+            <div class="button-container" id="btnArea">
+                <button onclick="nextPage(4)" id="yesBtn">Yes, my love</button>
+                <button id="noButton" onmouseover="moveButton()">No</button>
             </div>
         </section>
 
         <section id="page4">
-            <p>Our date on the 14th will be based on our vacant time. I’ll wait for you whenever you're ready!</p>
-            <button onclick="nextPage(5)">What should I wear?</button>
+            <p>We'll see each other love this saturdayyy, chat chat nalang nyaknyaknyak!</p>
+            <p style="font-size: 0.8rem; margin-top: 20px;">Say "i love you so much my baby" to continue:</p>
+            <input type="text" id="loveText" placeholder="Type it here..." oninput="checkLoveType()">
+            <br>
+            <button id="nextAfterType" onclick="nextPage(5)" style="display: none;">Continue ❤️</button>
         </section>
 
         <section id="page5">
-            <h3>The Dress Code</h3>
-            <p>Wear your best outfit! But remember...</p>
-            <p class="highlight">What's important is that you love me (and I love you)!</p>
-            <button onclick="nextPage(6)">Where are we going?</button>
+            <h3>Ano susuotin ko love?</h3>
+            <button onclick="nextPage(6)">Tingin...</button>
         </section>
 
         <section id="page6">
-            <h3>Our Spot</h3>
-            <p><strong>Mary's Coffee</strong></p>
-            <p>Barlin Street corner Sta Cruz Street,<br>Naga City, Philippines, 4400</p>
-            <button onclick="nextPage(7)">Final message</button>
+            <h3>The dress code</h3>
+            <p>Kahit ano baby, wear your best/most comfy.</p>
+            <p class="highlight">What's important is that you love me, and i love you so much nyehehee</p>
+            <button onclick="nextPage(7)">Sa'n tayo love?</button>
         </section>
 
         <section id="page7">
+            <h3>Our Spot</h3>
+            <p><strong>Mary's Coffee</strong></p>
+            <p>Barlin Street corner Sta Cruz Street,<br>Naga City, Philippines, 4400</p>
+            <p style="margin-top: 20px; font-style: italic; font-size: 0.9rem;">Buttttt, if di available, anywhere you want nalang my love!</p>
+            <button onclick="nextPage(8)">Final message</button>
+        </section>
+
+        <section id="page8">
             <h2 class="bounce">See you, my loveeee!</h2>
             <p>Really excited to see you, my babyy!</p>
+            <h1 style="font-size: 3rem;">mwaaaa</h1>
             <div class="floating-hearts">💖✨🌹</div>
         </section>
     </div>
 
-    <script>
-        function nextPage(pageNumber) {
-            // Hide all sections
-            document.querySelectorAll('section').forEach(section => {
-                section.classList.remove('active');
-            });
-            // Show the target section
-            document.getElementById('page' + pageNumber).classList.add('active');
-        }
-
-        function playMusic() {
-            let audio = document.getElementById('bgMusic');
-            audio.play().catch(e => console.log("Audio needs user interaction first"));
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
